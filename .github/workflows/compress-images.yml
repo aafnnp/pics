@@ -1,8 +1,13 @@
 name: Compress Images
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: '00 23 * * 0'
+  push:
+    branches:
+      - main
+    paths:
+      - '**.jpg'
+      - '**.jpeg'
+      - '**.png'
+      - '**.webp'
 jobs:
   build:
     # Only run on Pull Requests within the same repository, and not from forks.
